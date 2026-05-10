@@ -1,5 +1,5 @@
 🚀 Agentic DevOps: Tam Kapsamlı Kurulum Rehberi
-Bu belge, Agentic DevOps ekosisteminin (AnythingLLM, Model Context Protocol, AWX ve Docker mimarisi) yepyeni bir sunucuya veya yerel makineye (Linux/WSL) sıfırdan nasıl kurulacağını adım adım açıklamaktadır.
+Bu belge , Agentic DevOps ekosisteminin (AnythingLLM, Model Context Protocol, AWX ve Docker mimarisi) yepyeni bir sunucuya veya yerel makineye (Linux/WSL) sıfırdan nasıl kurulacağını adım adım açıklamaktadır.
 
 📌 Ön Koşullar (Prerequisites)
 Kuruluma başlamadan önce hedef sistemde aşağıdaki araçların kurulu ve çalışır durumda olduğundan emin olun:
