@@ -1,0 +1,18 @@
+{
+  "name": "deploy_project_flow",
+  "description": "\"Kullanıcı 'deploy et', 'yayına al', 'konteynere gönder' veya 'projeyi güncelle' gibi ifadeler kullandığında bu akışı başlat. Bu akış, AWX üzerindeki deployment job şablonlarını tetiklemek için kullanılır.\" \"Kullanıcı yeni bir konteyner kurmak, deploy etmek veya 'yeni bir instance oluştur' dediğinde bu akışı başlat.\"",
+  "active": true,
+  "steps": [
+    {
+      "type": "start",
+      "config": {
+        "variables": [
+          {
+            "name": "",
+            "value": ""
+          }
+        ]
+      }
+    }
+  ]
+}

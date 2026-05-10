@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Deploy Project",
+    "job_type": "run",
+    "playbook": "deploy.yml",
+    "description": "Yeni Docker konteyneri deploy eder"
+  },
+  {
+    "name": "Container Status",
+    "job_type": "run",
+    "playbook": "status.yml",
+    "description": "Konteyner durumlarını listeler"
+  }
+  // Stop ve Delete için de benzer blokları buraya ekleyebilirsin
+]

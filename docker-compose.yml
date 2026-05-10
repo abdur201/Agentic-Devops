@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: devops-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  anythingllm:
+    build:
+      context: .
+      dockerfile: Dockerfile.anythingllm
+    container_name: devops-anythingllm
+    ports:
+      - "3001:3001"
+    environment:
+      - STORAGE_DIR=/app/server/storage
+    env_file:
+      - .env
+    volumes:
+      - anythingllm_data:/app/server/storage
+      - ./mcp-server:/app/mcp-server
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  ollama_data:
+  anythingllm_data:

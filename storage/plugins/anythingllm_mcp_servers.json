@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "awx-ops": {
+      "command": "python3",
+      "args": ["/app/mcp-server/server.py"]
+    }
+  }
+}

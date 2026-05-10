@@ -1,0 +1,6 @@
+.env
+storage/everything/
+storage/vector-cache/
+storage/lancedb/
+__pycache__/
+*.log

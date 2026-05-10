@@ -1,0 +1,10 @@
+FROM mintplexlabs/anythingllm:latest
+USER root
+
+# Python ve sanal ortam (venv) araçlarını kur
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+
+# Temiz bir sanal ortam oluştur ve kütüphaneleri oraya kur
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+RUN pip install mcp requests python-dotenv

@@ -1,0 +1,392 @@
+{
+     "credentials": [
+          {
+               "name": "Server_SSH_Key",
+               "description": "",
+               "organization": null,
+               "inputs": {
+                    "username": "root",
+                    "ssh_key_data": "$encrypted$",
+                    "become_method": "sudo",
+                    "become_username": "root"
+               },
+               "credential_type": {
+                    "name": "Machine",
+                    "kind": "ssh",
+                    "type": "credential_type"
+               },
+               "user": {
+                    "username": "admin",
+                    "type": "user"
+               },
+               "natural_key": {
+                    "organization": null,
+                    "name": "Server_SSH_Key",
+                    "credential_type": {
+                         "name": "Machine",
+                         "kind": "ssh",
+                         "type": "credential_type"
+                    },
+                    "type": "credential"
+               }
+          }
+     ],
+     "projects": [
+          {
+               "name": "Docker-test",
+               "description": "",
+               "local_path": "_6__docker_test",
+               "scm_type": "git",
+               "scm_url": "https://github.com/abdur201/docker-test",
+               "scm_branch": "",
+               "scm_refspec": "",
+               "scm_clean": true,
+               "scm_delete_on_update": true,
+               "credential": null,
+               "timeout": 0,
+               "scm_update_on_launch": true,
+               "scm_update_cache_timeout": 0,
+               "allow_override": false,
+               "custom_virtualenv": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "related": {
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": []
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Docker-test",
+                    "type": "project"
+               }
+          }
+     ],
+     "job_templates": [
+          {
+               "name": "Delete",
+               "description": "",
+               "job_type": "run",
+               "playbook": "delete.yml",
+               "scm_branch": "",
+               "forks": 0,
+               "limit": "",
+               "verbosity": 1,
+               "extra_vars": "---\ntarget_container: \"\"",
+               "job_tags": "",
+               "force_handlers": false,
+               "skip_tags": "",
+               "start_at_task": "",
+               "timeout": 0,
+               "use_fact_cache": false,
+               "host_config_key": "",
+               "ask_scm_branch_on_launch": false,
+               "ask_diff_mode_on_launch": false,
+               "ask_variables_on_launch": true,
+               "ask_limit_on_launch": false,
+               "ask_tags_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_job_type_on_launch": false,
+               "ask_verbosity_on_launch": false,
+               "ask_inventory_on_launch": false,
+               "ask_credential_on_launch": false,
+               "survey_enabled": false,
+               "become_enabled": true,
+               "diff_mode": true,
+               "allow_simultaneous": false,
+               "custom_virtualenv": null,
+               "job_slice_count": 1,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "inventory": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "My_Lab_Servers",
+                    "type": "inventory"
+               },
+               "project": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Docker-test",
+                    "type": "project"
+               },
+               "related": {
+                    "labels": [],
+                    "credentials": [
+                         {
+                              "organization": null,
+                              "name": "Server_SSH_Key",
+                              "credential_type": {
+                                   "name": "Machine",
+                                   "kind": "ssh",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ],
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Delete",
+                    "type": "job_template"
+               }
+          },
+          {
+               "name": "Deploy_Docker_Project",
+               "description": "",
+               "job_type": "run",
+               "playbook": "deploy-web-app.yml",
+               "scm_branch": "",
+               "forks": 0,
+               "limit": "",
+               "verbosity": 1,
+               "extra_vars": "---\nmy_docker_password: \"REPLACE_WITH_YOUR_DOCKER_TOKEN\"",
+               "job_tags": "",
+               "force_handlers": false,
+               "skip_tags": "",
+               "start_at_task": "",
+               "timeout": 0,
+               "use_fact_cache": false,
+               "host_config_key": "",
+               "ask_scm_branch_on_launch": false,
+               "ask_diff_mode_on_launch": false,
+               "ask_variables_on_launch": false,
+               "ask_limit_on_launch": false,
+               "ask_tags_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_job_type_on_launch": false,
+               "ask_verbosity_on_launch": false,
+               "ask_inventory_on_launch": false,
+               "ask_credential_on_launch": false,
+               "survey_enabled": false,
+               "become_enabled": true,
+               "diff_mode": true,
+               "allow_simultaneous": false,
+               "custom_virtualenv": null,
+               "job_slice_count": 1,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "inventory": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "My_Lab_Servers",
+                    "type": "inventory"
+               },
+               "project": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Docker-test",
+                    "type": "project"
+               },
+               "related": {
+                    "labels": [],
+                    "credentials": [
+                         {
+                              "organization": null,
+                              "name": "Server_SSH_Key",
+                              "credential_type": {
+                                   "name": "Machine",
+                                   "kind": "ssh",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ],
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Deploy_Docker_Project",
+                    "type": "job_template"
+               }
+          },
+          {
+               "name": "status",
+               "description": "",
+               "job_type": "run",
+               "playbook": "status.yml",
+               "scm_branch": "",
+               "forks": 0,
+               "limit": "",
+               "verbosity": 1,
+               "extra_vars": "---",
+               "job_tags": "",
+               "force_handlers": false,
+               "skip_tags": "",
+               "start_at_task": "",
+               "timeout": 0,
+               "use_fact_cache": false,
+               "host_config_key": "",
+               "ask_scm_branch_on_launch": false,
+               "ask_diff_mode_on_launch": false,
+               "ask_variables_on_launch": false,
+               "ask_limit_on_launch": false,
+               "ask_tags_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_job_type_on_launch": false,
+               "ask_verbosity_on_launch": false,
+               "ask_inventory_on_launch": false,
+               "ask_credential_on_launch": false,
+               "survey_enabled": false,
+               "become_enabled": true,
+               "diff_mode": true,
+               "allow_simultaneous": false,
+               "custom_virtualenv": null,
+               "job_slice_count": 1,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "inventory": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "My_Lab_Servers",
+                    "type": "inventory"
+               },
+               "project": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Docker-test",
+                    "type": "project"
+               },
+               "related": {
+                    "labels": [],
+                    "credentials": [
+                         {
+                              "organization": null,
+                              "name": "Server_SSH_Key",
+                              "credential_type": {
+                                   "name": "Machine",
+                                   "kind": "ssh",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ],
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "status",
+                    "type": "job_template"
+               }
+          },
+          {
+               "name": "stop",
+               "description": "",
+               "job_type": "run",
+               "playbook": "stop.yml",
+               "scm_branch": "",
+               "forks": 0,
+               "limit": "",
+               "verbosity": 1,
+               "extra_vars": "---\ntarget_container: \"\"",
+               "job_tags": "",
+               "force_handlers": false,
+               "skip_tags": "",
+               "start_at_task": "",
+               "timeout": 0,
+               "use_fact_cache": false,
+               "host_config_key": "",
+               "ask_scm_branch_on_launch": false,
+               "ask_diff_mode_on_launch": false,
+               "ask_variables_on_launch": true,
+               "ask_limit_on_launch": false,
+               "ask_tags_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_job_type_on_launch": false,
+               "ask_verbosity_on_launch": false,
+               "ask_inventory_on_launch": false,
+               "ask_credential_on_launch": false,
+               "survey_enabled": false,
+               "become_enabled": true,
+               "diff_mode": true,
+               "allow_simultaneous": false,
+               "custom_virtualenv": null,
+               "job_slice_count": 1,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "inventory": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "My_Lab_Servers",
+                    "type": "inventory"
+               },
+               "project": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Docker-test",
+                    "type": "project"
+               },
+               "related": {
+                    "labels": [],
+                    "credentials": [
+                         {
+                              "organization": null,
+                              "name": "Server_SSH_Key",
+                              "credential_type": {
+                                   "name": "Machine",
+                                   "kind": "ssh",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ],
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "stop",
+                    "type": "job_template"
+               }
+          }
+     ]
+}

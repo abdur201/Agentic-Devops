@@ -1,0 +1,34 @@
+{
+  "name": "stop_delete_flow",
+  "description": "\"Kullanıcı bir konteyneri durdurmak (stop) veya silmek (delete/remove) istediğinde bu akışı kullan.\"",
+  "active": true,
+  "steps": [
+    {
+      "type": "start",
+      "config": {
+        "variables": [
+          {
+            "name": "target_id",
+            "value": "all"
+          }
+        ]
+      }
+    },
+    {
+      "type": "llmInstruction",
+      "config": {
+        "instruction": "Kullanıcının mesajından hangi konteyneri durdurmak veya silmek istediğini anla. Eğer ID belirtmemişse ve 'hepsi' demiyorsa, kullanıcıya hangi konteyner üzerinde işlem yapacağını sor.\"",
+        "resultVariable": "",
+        "directOutput": false
+      }
+    },
+    {
+      "type": "llmInstruction",
+      "config": {
+        "instruction": "Eğer kullanıcı \"durdur\" dediyse -> stop_container aracını seç ve container_id alanına {{target_id}} değişkenini bağla.\n\nEğer kullanıcı \"sil\" dediyse -> delete_container aracını seç ve container_id alanına {{target_id}} değişkenini bağla.",
+        "resultVariable": "",
+        "directOutput": false
+      }
+    }
+  ]
+}
